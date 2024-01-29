@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>NLP</title>
+</head>
+<body class="base">
+
+    <div class="header">
+        <div align="center">
+            <h3> Text Classification App </h3>
+        </div>
+        <hr>
+    </div>
+
+    <div class="row">
+
+        <div class="column_left">
+            <div class="researchHeaderCard">
+                    <div class="researchHeading">
+                        <h3> Result </h3>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <td><b>Model</b></td>
+                            <td>{{ model_name }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Text</b></td>
+                            <td>{{ text }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Probability</b></td>
+                            <td>{{ probability }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Classification</b></td>
+                            <td>{{ classification }}</td>
+                        </tr>
+
+                    </table>
+            <br/>
+
+            </div>
+        </div>
+
+        <div class="column_right">
+            <div align="left">
+                <form name="upload-frm" action="/evaluate" method="post">
+
+                    <table>
+                        <tr class="table_header">
+                            <td>
+                                <label for="text-content"><b>Enter Text Below:</b></label>
+                            </td>
+                            <td align="center">
+                                <b>Select a Model</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="table_img">
+                                <textarea style="font-size: 15pt" id="text-content" name="text-content" rows="6" cols="60"> </textarea>
+
+                            </td>
+
+                            <td class="td_model">
+                                <p><u>Available Models:</u></p>
+                                <input type="radio" id="distilbert" name="model-name" value="distilbert" checked>
+                                <label for="distilbert">DistilBert</label>
+                                <br/>
+                                <input type="radio" id="xlm-roberta" name="model-name" value="xlm-roberta">
+                                <label for="xlm-roberta">XLM-Roberta</label>
+
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td colspan="2">
+                                <input type="submit" class="button" value="Submit" />
+                            </td>
+                        </tr>
+                    </table>
+
+                </form>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
